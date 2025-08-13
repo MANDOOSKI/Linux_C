@@ -8,6 +8,12 @@ int strcmp_my(const char* dest, const char* src){
 		return 4000;
 	}
 
-	return *dest - *src;
+	// str1과 str2가 같으면 다음문자 비교
+	while(*dest != '\0' && *dest == *src){
+		++dest;
+		++src;
+	}
+
+	return *(unsigned char*)dest - *(unsigned char*)src;
 
 }
